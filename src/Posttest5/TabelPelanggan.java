@@ -277,6 +277,10 @@ public class TabelPelanggan extends javax.swing.JFrame {
         // TODO add your handling code here:
          int baris = mytabel.getSelectedRow();
         model.removeRow(baris);
+        
+       tbl_tambah.setEnabled(true);
+        tbl_update.setEnabled(false);
+         tbl_hapus.setEnabled(false);
     }//GEN-LAST:event_tbl_hapusActionPerformed
 
     private void tbl_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbl_simpanActionPerformed
