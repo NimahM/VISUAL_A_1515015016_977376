@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Posttest6;
+package Posttest7;
+import Posttest6.*;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -18,6 +19,7 @@ public class FormDataBuku extends javax.swing.JFrame { //method penghubung form 
     private ResultSet rss;
     int baris;
     private boolean cek=true;
+    
     
     public FormDataBuku() {
         initComponents();
@@ -182,15 +184,15 @@ private void SearchbyJUDUL(){  //mencari data dengan kata kunci judul dengan que
                
                if(o[0].equals(judul.toLowerCase()) && o[1].equals(penulis.toLowerCase())){
                   JOptionPane.showMessageDialog(null, "Data Sudah Ada ");
-                  cek=false; //query if diatas yang mencari apakah data yang akan dimasukan belum ada didatabase
+                  cek=false; //query if diatas yang mencari apakah ada data selain daripada dalam database
                  break;
                }
-           }
            
+           }
            
                if(cek==true){
                    TambahData(judul,penulis,harga); //jika data yang akan dimasukan belum ada pada database method kemudian menjalankan fungsi untuk menambahkan data kedalam database
-               }
+               }  
            
         } catch (SQLException e) {
             System.out.println(e.getMessage());        }
@@ -500,6 +502,7 @@ private void SearchbyJUDUL(){  //mencari data dengan kata kunci judul dengan que
        TambahData(judul,penulis,harga);
         InitTable();//refresh
        TampilData();//refresh
+       validasi(judul,penulis,harga);
     }//GEN-LAST:event_btn_simpanActionPerformed
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
@@ -648,6 +651,8 @@ private void SearchbyJUDUL(){  //mencari data dengan kata kunci judul dengan que
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FormDataBuku.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
